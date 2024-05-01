@@ -207,7 +207,7 @@ function renderAllShapes(){
     tail.matrix.rotate(-90, 1, 1, 0);
     if(shift){
         tail.matrix.translate(0, -0.5, 0);
-        tail.matrix.rotate(tailRotationAngle, 0, 1, 0);
+        tail.matrix.rotate(tailRotationAngle, 1, 0, 0);
     }
     
     tail.render();
@@ -384,7 +384,7 @@ function tick() {
         g_headAngle = 5 * Math.sin(g_seconds);
     }else if (shift) {
         eyeScaleX = 0.5 + 0.5 * Math.sin(2*g_seconds);
-        tailRotationAngle = 20 * Math.sin(g_seconds * 2);
+        tailRotationAngle = 20 * Math.sin(g_seconds * 3);
     }
     renderAllShapes();
     requestAnimationFrame(tick);
